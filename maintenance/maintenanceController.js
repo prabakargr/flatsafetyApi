@@ -4,7 +4,7 @@ var createMaintenance = function(req, res) {
     var maintenance = new maintenanceModel(req.body);
     maintenance.save(function(err, result) {
         if (err) return res.status(400).send('cannot create maintenace');
-        else return res.status(200).send('created maintenance');
+        else return res.status(200).send(result);
         console.log(result);
     })
 }
