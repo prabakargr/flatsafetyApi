@@ -17,7 +17,23 @@ var findProfile = function(req, res) {
     })
 }
 
+var updateProfile = function(req, res) {
+    var uid = req.body.uid;
+    var name = req.body.name;
+    var homecategory = req.body.homecategory;
+    var block = req.body.block;
+    var floor = req.body.floor;
+    var flatno = req.body.flatno;
+    var contact = req.body.contact;
+    flatsUsersModel.findOneAndUpdate({ uid }, { name, homecategory, block, floor, flatno, contact },
+        function(err, result) {
+            if (err) res.send('cannot update');
+            else res.send(result);
+        })
+}
+
 module.exports = {
     createProfile: createProfile,
-    findProfile: findProfile
+    findProfile: findProfile,
+    updateProfile: updateProfile
 }
