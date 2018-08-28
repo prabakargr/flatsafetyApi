@@ -3,9 +3,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema
 
 var flatUserModel = new Schema({
-    uid:String,
+    uid: String,
     name: String,
-    category: String,
+    homecategory: String,
     block: String,
     floor: String,
     flatno: String,
