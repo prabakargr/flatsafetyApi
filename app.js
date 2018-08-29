@@ -8,7 +8,8 @@ var db = mongoose.connect("mongodb://flatsafe:flat12@ds125422.mlab.com:25422/fla
 
 var flatUsersRouting = require('./flatsUsers/flatsUsersRouting');
 var maintenanceRouting = require('./maintenance/maintenanceRouting');
-var riseRequestRouting = require('./riseReqs/ireReqRouting')
+var riseRequestRouting = require('./riseReqs/ireReqRouting');
+var complientRouting = require('./complients/complientRouting');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,6 +23,8 @@ app.use(function(req, res, next) {
 app.use('/flatUsers', flatUsersRouting);
 app.use('/maintenace', maintenanceRouting);
 app.use('/riseReqs', riseRequestRouting);
+app.use('/complients', complientRouting);
+
 
 
 var port = process.env.PORT || 4000;
