@@ -10,6 +10,7 @@ var flatUsersRouting = require('./flatsUsers/flatsUsersRouting');
 var maintenanceRouting = require('./maintenance/maintenanceRouting');
 var riseRequestRouting = require('./riseReqs/ireReqRouting');
 var complientRouting = require('./complients/complientRouting');
+var newsRouting = require('./newsUpdates/newsUpdateRouting');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,6 +25,7 @@ app.use('/flatUsers', flatUsersRouting);
 app.use('/maintenace', maintenanceRouting);
 app.use('/riseReqs', riseRequestRouting);
 app.use('/complients', complientRouting);
+app.use('/news', newsRouting);
 
 
 
