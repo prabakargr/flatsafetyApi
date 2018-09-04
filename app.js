@@ -11,6 +11,7 @@ var maintenanceRouting = require('./maintenance/maintenanceRouting');
 var riseRequestRouting = require('./riseReqs/ireReqRouting');
 var complientRouting = require('./complients/complientRouting');
 var newsRouting = require('./newsUpdates/newsUpdateRouting');
+var adminUsersRouting = require('./adminUsers/adminUsersRouting');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,6 +27,7 @@ app.use('/maintenace', maintenanceRouting);
 app.use('/riseReqs', riseRequestRouting);
 app.use('/complients', complientRouting);
 app.use('/news', newsRouting);
+app.use('/adminUsers', adminUsersRouting);
 
 
 
