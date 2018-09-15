@@ -12,6 +12,7 @@ var riseRequestRouting = require('./riseReqs/ireReqRouting');
 var complientRouting = require('./complients/complientRouting');
 var newsRouting = require('./newsUpdates/newsUpdateRouting');
 var adminUsersRouting = require('./adminUsers/adminUsersRouting');
+var acceptNotifyRouting = require('./acceptedNotify/acceptNotifyRouting');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,6 +29,7 @@ app.use('/riseReqs', riseRequestRouting);
 app.use('/complients', complientRouting);
 app.use('/news', newsRouting);
 app.use('/adminUsers', adminUsersRouting);
+app.use('/notification', acceptNotifyRouting);
 
 
 
