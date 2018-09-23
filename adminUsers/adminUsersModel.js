@@ -4,10 +4,11 @@ var Schema = mongoose.Schema;
 
 var adminUsersModel = new Schema({
     uid: String,
-    name: String,
+    employeeName: String,
     age: String,
     address: String,
-    contact: String
+    contact: String,
+    employeeId: String
 });
 
 module.exports = mongoose.model('adminuser', adminUsersModel);

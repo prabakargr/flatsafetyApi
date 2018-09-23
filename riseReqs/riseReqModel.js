@@ -13,7 +13,8 @@ var riseReqModel = new Schema({
     block: String,
     floor: String,
     flatno: String,
-    deliverycontact: String
+    deliverycontact: String,
+    createdDateTime: String
 });
 
 module.exports = mongoose.model('riserRequest', riseReqModel);
