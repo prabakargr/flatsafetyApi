@@ -7,6 +7,7 @@ var acceptNotifyModel = new Schema({
     department: String,
     message: String,
     acceptedDateTime: String,
+    createdDateTime: String,
     employeeId: String,
     employeeName: String
 });
