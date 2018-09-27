@@ -9,7 +9,8 @@ var acceptNotifyModel = new Schema({
     acceptedDateTime: String,
     createdDateTime: String,
     employeeId: String,
-    employeeName: String
+    employeeName: String,
+    remarks:String
 });
 
 module.exports = mongoose.model('acceptedNotification', acceptNotifyModel)
