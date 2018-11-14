@@ -17,8 +17,18 @@ var findTheNotification = function(req, res) {
     })
 }
 
+var deleteNotification = function(req,res){
+    var uid = req.body.uid;
+    notificationModel.findByIdAndRemove({_id},function(err,notification){
+        if(!err){
+            res.status(204);
+            res.send("Removed");
+        }else{res.send("Deleted Faild")}
+    });
+}
 
 module.exports = {
     createNotification: createNotification,
-    findTheNotification: findTheNotification
+    findTheNotification: findTheNotification,
+    deleteNotification:deleteNotification
 }
