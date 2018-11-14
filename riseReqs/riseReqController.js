@@ -17,9 +17,19 @@ var getAllRiseReqs = function(req, res) {
         else return res.status(200).send(result);
     })
 }
+var deleteRiseReqs = function(req,res){
+    var _id = req.body._id;
+    riseReqModel.findByIdAndRemove({_id},function(err,del){
+        if(!err){
+            res.status(204);
+            res.send("Removed");
+        }else{res.send("Deleted Faild")}
+    });
+}
 
 module.exports = {
     createRiseReq: createRiseReq,
-    getAllRiseReqs: getAllRiseReqs
+    getAllRiseReqs: getAllRiseReqs,
+    deleteRiseReqs:deleteRiseReqs
 
 }

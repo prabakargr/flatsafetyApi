@@ -8,8 +8,8 @@ var createoldRiseReq = function(req, res) {
         }
         if (err) return res.status(400).send('cannot create maintenace');
         else return res.status(200).send(data)
-
-    })
+        console.log(data)
+    }) 
 };
 var getAlloldRiseReqs = function(req, res) {
     riseoldReqModel.find(function(err, result) {
