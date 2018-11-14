@@ -19,7 +19,7 @@ var getAlloldRiseReqs = function(req, res) {
 }
 
 module.exports = {
-    createRiseReq: createoldRiseReq,
-    getAllRiseReqs: getAlloldRiseReqs
+    createoldRiseReq: createoldRiseReq,
+    getAlloldRiseReqs: getAlloldRiseReqs
 
 }
