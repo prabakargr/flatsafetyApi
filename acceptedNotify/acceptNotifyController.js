@@ -18,7 +18,7 @@ var findTheNotification = function(req, res) {
 }
 
 var deleteNotification = function(req,res){
-    var uid = req.body.uid;
+    var _id = req.body._id;
     notificationModel.findByIdAndRemove({_id},function(err,notification){
         if(!err){
             res.status(204);
