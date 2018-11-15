@@ -18,8 +18,19 @@ var getAllComplients = function(req, res) {
     })
 }
 
+var deleteComplaint = function(req,res){
+    var _id = req.body._id;
+    complientModel.findByIdAndRemove({_id},function(err,del){
+        if(!err){
+            res.status(204);
+            res.send("Removed");
+        }else{res.send("Deleted Faild")}
+    });
+}
+
 module.exports = {
     createComplient: createComplient,
-    getAllComplients: getAllComplients
+    getAllComplients: getAllComplients,
+    deleteComplaint:deleteComplaint
 
 }

@@ -18,7 +18,18 @@ var getAllMaintenance = function(req, res) {
     })
 }
 
+var deleteMaintenance = function(req,res){
+    var _id = req.body._id;
+    maintenanceModel.findByIdAndRemove({_id},function(err,del){
+        if(!err){
+            res.status(204);
+            res.send("Removed");
+        }else{res.send("Deleted Faild")}
+    });
+}
+
 module.exports = {
     createMaintenance: createMaintenance,
-    getAllMaintenance: getAllMaintenance
+    getAllMaintenance: getAllMaintenance,
+    deleteMaintenance:deleteMaintenance
 }
