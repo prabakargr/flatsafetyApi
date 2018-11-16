@@ -13,7 +13,7 @@ var newsRouting = require('./newsUpdates/newsUpdateRouting');
 var adminUsersRouting = require('./adminUsers/adminUsersRouting');
 var acceptNotifyRouting = require('./acceptedNotify/acceptNotifyRouting');
 var oldriseReqRouting = require('./oldrequest/oldrequestRouting');
-var oldComplaintRouting = require('./oldcomplaint/oldcomplaintRouting');
+var oldComplaintRouting = require('./oldcomplaint/oldComRouting');
 var oldMainRouting = require('./oldmaintenance/oldMainRouting');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,7 +32,7 @@ app.use('/news', newsRouting);
 app.use('/adminUsers', adminUsersRouting);
 app.use('/notification', acceptNotifyRouting);
 app.use('/oldrise',oldriseReqRouting);
-app.use('/oldcomplaint',oldComplaintRouting);
+app.use('/oldcomp',oldComplaintRouting);
 app.use('/oldmain',oldMainRouting);
 
 var port = process.env.PORT || 4000;

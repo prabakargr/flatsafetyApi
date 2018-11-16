@@ -14,4 +14,4 @@ var oldcomplientModel = new Schema({
     createdDateTime: String
 });
 
-module.exports = mongoose.model('oldcomplaint', oldcomplientModel);
+module.exports = mongoose.model('oldcomplient', oldcomplientModel);

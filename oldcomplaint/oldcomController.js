@@ -1,8 +1,8 @@
-var oldcomplientModel = require('./oldcomaplaintModel');
+var complaintoldReqModel = require('./oldComModel');
 
 var createoldComReq = function(req, res) {
-    var oldcomplient = new oldcomplientModel(req.body);
-    oldcomplient.save(function(err, result) {
+    var oldCom = new complaintoldReqModel(req.body);
+    oldCom.save(function(err, result) {
         data = {
             message: "Your request created"
         }
@@ -12,7 +12,7 @@ var createoldComReq = function(req, res) {
     }) 
 };
 var getAlloldComReqs = function(req, res) {
-    oldcomplientModel.find(function(err, result) {
+    complaintoldReqModel.find(function(err, result) {
         if (err) return res.status(400).send('cannot get requests');
         else return res.status(200).send(result);
     })
