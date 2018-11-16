@@ -1,25 +1,25 @@
-var oldcomplaintModel = require('./oldcomplaintModel');
+var oldcomplientModel = require('./oldcomaplaintModel');
 
-var createoldComplaint = function(req, res) {
-    var oldcomplaint = new oldcomplaintModel(req.body);
-    oldcomplaint.save(function(err, result) {
+var createoldComReq = function(req, res) {
+    var oldcomplient = new oldcomplientModel(req.body);
+    oldcomplient.save(function(err, result) {
         data = {
             message: "Your request created"
         }
-        if (err) return res.status(400).send('cannot create complaint');
+        if (err) return res.status(400).send('cannot create maintenace');
         else return res.status(200).send(data)
         console.log(data)
     }) 
 };
-var getAlloldComplaint = function(req, res) {
-    oldcomplaintModel.find(function(err, result) {
-        if (err) return res.status(400).send('cannot get complaint');
+var getAlloldComReqs = function(req, res) {
+    oldcomplientModel.find(function(err, result) {
+        if (err) return res.status(400).send('cannot get requests');
         else return res.status(200).send(result);
     })
 }
 
 module.exports = {
-    createoldComplaint: createoldComplaint,
-    getAlloldComplaint: getAlloldComplaint
+    createoldComReq: createoldComReq,
+    getAlloldComReqs: getAlloldComReqs
 
 }

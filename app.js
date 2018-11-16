@@ -3,7 +3,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var app = express();
-
 var db = mongoose.connect("mongodb://flatsafe:flat12@ds125422.mlab.com:25422/flatsafety", { useNewUrlParser: true });
 
 var flatUsersRouting = require('./flatsUsers/flatsUsersRouting');
@@ -14,8 +13,8 @@ var newsRouting = require('./newsUpdates/newsUpdateRouting');
 var adminUsersRouting = require('./adminUsers/adminUsersRouting');
 var acceptNotifyRouting = require('./acceptedNotify/acceptNotifyRouting');
 var oldriseReqRouting = require('./oldrequest/oldrequestRouting');
-var oldmaintenanceRouting = require('./oldmaintenance/oldmaintenanceRouting');
-var oldcomplaintRouting = require('./oldcomplaint/oldcomplaintRouting');
+var oldComplaintRouting = require('./oldcomplaint/oldcomplaintRouting');
+var oldMainRouting = require('./oldmaintenance/oldMainRouting');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -33,9 +32,8 @@ app.use('/news', newsRouting);
 app.use('/adminUsers', adminUsersRouting);
 app.use('/notification', acceptNotifyRouting);
 app.use('/oldrise',oldriseReqRouting);
-app.use('./oldmaintenance',oldmaintenanceRouting);
-app.use('./oldcomplaint',oldcomplaintRouting)
-
+app.use('/oldcomplaint',oldComplaintRouting);
+app.use('/oldmain',oldMainRouting);
 
 var port = process.env.PORT || 4000;
 

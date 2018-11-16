@@ -1,10 +1,10 @@
 var express = require('express');
 
-var oldcomplaintRouting = express.Router();
+var oldComplaintRouting = express.Router();
 
-var oldcomplaintController = require('./oldcomplaintController');
+var complaintoldReqController = require('./oldcomplaintController');
 
-oldcomplaintRouting.route('/oldcomplaint').post(oldcomplaintController.createoldComplaint);
-oldcomplaintRouting.route('/getOldcomplaint').get(oldcomplaintController.getAlloldComplaint);
+oldComplaintRouting.route('/oldComp').post(complaintoldReqController.createoldComReq);
+oldComplaintRouting.route('/getOldComp').get(complaintoldReqController.getAlloldComReqs);
 
-module.exports = oldcomplaintRouting;
+module.exports = oldComplaintRouting;

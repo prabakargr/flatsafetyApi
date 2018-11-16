@@ -1,8 +1,8 @@
-var oldmaintenanceModel = require('./oldmaintenanceModel');
+var  oldmaintenanceModel= require('./oldmainModel');
 
-var createoldMaintenanceReq = function(req, res) {
-    var oldmaintenance = new oldmaintenanceModel(req.body);
-    oldmaintenance.save(function(err, result) {
+var createoldMainReq = function(req, res) {
+    var OldMain = new oldmaintenanceModel(req.body);
+    OldMain.save(function(err, result) {
         data = {
             message: "Your request created"
         }
@@ -11,7 +11,7 @@ var createoldMaintenanceReq = function(req, res) {
         console.log(data)
     }) 
 };
-var getAlloldMaintenanceReqs = function(req, res) {
+var getAlloldMainReqs = function(req, res) {
     oldmaintenanceModel.find(function(err, result) {
         if (err) return res.status(400).send('cannot get requests');
         else return res.status(200).send(result);
@@ -19,7 +19,7 @@ var getAlloldMaintenanceReqs = function(req, res) {
 }
 
 module.exports = {
-    createoldMaintenanceReq: createoldMaintenanceReq,
-    getAlloldMaintenanceReqs: getAlloldMaintenanceReqs
+    createoldMainReq: createoldMainReq,
+    getAlloldMainReqs: getAlloldMainReqs
 
 }
