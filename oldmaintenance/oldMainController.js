@@ -18,8 +18,18 @@ var getAlloldMainReqs = function(req, res) {
     })
 }
 
+var deleteoldMain = function(req,res){
+    var _id = req.body._id;
+    oldmaintenanceModel.findByIdAndRemove({_id},function(err,del){
+        if(!err){
+            res.status(204);
+            res.send("Removed");
+        }else{res.send("Deleted Faild")}
+    });
+}
 module.exports = {
     createoldMainReq: createoldMainReq,
-    getAlloldMainReqs: getAlloldMainReqs
+    getAlloldMainReqs: getAlloldMainReqs,
+    deleteoldMain:deleteoldMain
 
 }

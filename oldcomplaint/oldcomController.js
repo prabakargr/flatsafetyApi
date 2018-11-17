@@ -18,8 +18,20 @@ var getAlloldComReqs = function(req, res) {
     })
 }
 
+
+var deleteComplaint = function(req,res){
+    var _id = req.body._id;
+    complaintoldReqModel.findByIdAndRemove({_id},function(err,del){
+        if(!err){
+            res.status(204);
+            res.send("Removed");
+        }else{res.send("Deleted Faild")}
+    });
+}
+
 module.exports = {
     createoldComReq: createoldComReq,
-    getAlloldComReqs: getAlloldComReqs
+    getAlloldComReqs: getAlloldComReqs,
+    deleteComplaint:deleteComplaint
 
 }
