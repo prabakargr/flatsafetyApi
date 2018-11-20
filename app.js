@@ -18,7 +18,6 @@ var oldMainRouting = require('./oldmaintenance/oldMainRouting');
 var acceptCompletedRouting = require('./completed/completedRouting');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', req.headers.origin);
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,application/json, Accept,x-access-token");
