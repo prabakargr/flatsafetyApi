@@ -13,11 +13,7 @@ var findTheCompleted = function(req, res) {
 
     acceptCompletedModel.find({ uid }, function(err, result) {
         if (err) res.send({ message: "cannot find" });
-        else 
-        data = {
-            message:"Your Request Find"
-        }
-        res.send(result)
+        else return res.status(200).send(result);
         console.log(result)
     })
 }
