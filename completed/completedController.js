@@ -8,13 +8,13 @@ var createCompleted = function(req, res) {
     });
 }
 
+
 var findTheCompleted = function(req, res) {
     var uid = req.body.uid;
 
     acceptCompletedModel.find({ uid }, function(err, result) {
         if (err) res.send({ message: "cannot find" });
-        else return res.status(200).send(result);
-        console.log(result)
+        else res.send(result)
     })
 }
 
