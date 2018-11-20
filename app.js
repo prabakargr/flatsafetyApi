@@ -15,7 +15,7 @@ var acceptNotifyRouting = require('./acceptedNotify/acceptNotifyRouting');
 var oldriseReqRouting = require('./oldrequest/oldrequestRouting');
 var oldComplaintRouting = require('./oldcomplaint/oldComRouting');
 var oldMainRouting = require('./oldmaintenance/oldMainRouting');
-var completed = require('./completed/completedRouting');
+var acceptCompletedRouting = require('./completed/completedRouting');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -35,7 +35,7 @@ app.use('/notification', acceptNotifyRouting);
 app.use('/oldrise',oldriseReqRouting);
 app.use('/oldcomp',oldComplaintRouting);
 app.use('/oldmain',oldMainRouting);
-app.use('/completed',complientRouting)
+app.use('/completed',acceptCompletedRouting)
 
 var port = process.env.PORT || 4000;
 

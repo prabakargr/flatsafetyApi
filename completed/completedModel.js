@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var completedModel = new Schema({
+var acceptCompletedModel = new Schema({
     uid: String,
     department: String,
     message: String,
@@ -15,4 +15,4 @@ var completedModel = new Schema({
     completedDateTime:String
 });
 
-module.exports = mongoose.model('completed',completedModel)
+module.exports = mongoose.model('completed',acceptCompletedModel)

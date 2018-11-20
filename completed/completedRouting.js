@@ -1,11 +1,12 @@
 var express = require('express');
 
-var completedRouting = express.Router();
+var acceptCompletedRouting = express.Router();
 
-var completedController = require('./completedController');
+var acceptCompletedController = require('./completedController');
 
-completedRouting.route('/completedAccept').post(completedController.createCompleted);
-completedRouting.route('/completedNotifications').post(completedController.findTheCompleted);
-completedRouting.route('/removeCompleted').post(completedController.deleteCompleted)
+acceptCompletedRouting.route('/completedAccept').post(acceptCompletedController.createCompleted);
+acceptCompletedRouting.route('/completedNotifications').post(acceptCompletedController.findTheCompleted);
+acceptCompletedRouting.route('/delCompleted').post(acceptCompletedController.deleteCompleted);
 
-module.exports = completedRouting;
+
+module.exports = acceptCompletedRouting;
