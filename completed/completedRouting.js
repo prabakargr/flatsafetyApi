@@ -4,9 +4,9 @@ var acceptCompletedRouting = express.Router();
 
 var acceptCompletedController = require('./completedController');
 
-acceptCompletedRouting.route('/completedAccept').post(acceptCompletedController.createCompleted);
+acceptCompletedRouting.route('/completedAccepted').post(acceptCompletedController.createCompleted);
 acceptCompletedRouting.route('/completedNotifications').post(acceptCompletedController.findTheCompleted);
-acceptCompletedRouting.route('/delCompleted').post(acceptCompletedController.deleteCompleted);
+acceptCompletedRouting.route('/deletedCompleted').post(acceptCompletedController.deleteCompleted);
 
 
 module.exports = acceptCompletedRouting;
