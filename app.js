@@ -16,6 +16,7 @@ var oldriseReqRouting = require('./oldrequest/oldrequestRouting');
 var oldComplaintRouting = require('./oldcomplaint/oldComRouting');
 var oldMainRouting = require('./oldmaintenance/oldMainRouting');
 var acceptCompletedRouting = require('./completed/completedRouting');
+app.set('json spaces', 40);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(function(req, res, next) {

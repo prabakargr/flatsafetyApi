@@ -8,13 +8,20 @@ var createCompleted = function(req, res) {
     });
 }
 
+var getAllCompleted = function(req, res) {
+    acceptCompletedModel.find(function(err, result) {
+        if (err) return res.status(400).send('cannot find the completed request');
+        else return res.status(200).send(result);
+    })
+}
 
 var findTheCompleted = function(req, res) {
     var uid = req.body.uid;
 
     acceptCompletedModel.find({ uid }, function(err, result) {
+        console.log(result);
         if (err) res.send({ message: "cannot find" });
-        else return res.send(JSON.stringify(result))
+        else return res.send(result)
     })
 }
 
@@ -30,6 +37,7 @@ var deleteCompleted = function(req,res){
 
 module.exports = {
     createCompleted: createCompleted,
+    getAllCompleted:getAllCompleted,
     findTheCompleted: findTheCompleted,
     deleteCompleted:deleteCompleted
   
